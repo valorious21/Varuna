@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VARUNA Simulation Dashboard</title>
+  <link rel="stylesheet" href="varuna.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌱 VARUNA - Microgreen Smart Germination System</h1>
+
+    <div class="dashboard">
+      <div class="sensor-panel">
+        <h2>Live Sensor Data</h2>
+        <p>Temperature: <span id="temperature">--</span> °C</p>
+        <p>Humidity: <span id="humidity">--</span> %</p>
+        <p>Light: <span id="light">OFF</span></p>
+      </div>
+
+      <div class="control-panel">
+        <h2>Manual Controls</h2>
+        <button onclick="togglePump()">💧 Toggle Water Pump</button>
+        <button onclick="toggleFan()">🌀 Toggle Fan</button>
+        <button onclick="toggleLight()">💡 Toggle Light</button>
+      </div>
+    </div>
+
+    <div class="growth-stage">
+      <h2>Growth Stage</h2>
+      <div id="growthIcon" class="growth-icon">🌱</div>
+      <p id="growthStage">Seed</p>
+    </div>
+  </div>
+
+  <button id="toggleChartBtn" onclick="toggleChart()">📊 Toggle Historical Chart</button>
+  <div class="chart-container">
+    <canvas id="historyChart" width="400" height="200"></canvas>
+  </div>
+  
+  <script src="varuna.js"></script>
+</body>
+</html>
